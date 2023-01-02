@@ -32,7 +32,7 @@
                           </div>
                           <label class="mt-6 cursor-pointer">
                             <span class="px-4 py-2 mt-2 text-sm text-base leading-normal text-white bg-blue-500 rounded-full" >Select Avatar</span>
-                            <input id="avatar" type='file' class="hidden" :multiple="multiple" :accept="accept" />
+                            <input name="avatar" id="avatar" type='file' class="hidden" :multiple="multiple" :accept="accept" />
                           </label>
                         </div>
                       </div>

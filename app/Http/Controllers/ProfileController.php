@@ -85,7 +85,7 @@ class ProfileController extends Controller
         $useru = User::query()->where('id',$user->id)->first();
         $useru->profileId = $profile->id;
         $useru->save();
-        return redirect()->route('home');
+        return redirect()->route('profile.dashboard');
     }
 
     /**

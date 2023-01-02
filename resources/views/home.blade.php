@@ -29,9 +29,8 @@
                         <div class="w-full">
                             <div class="w-full h-48 bg-blue-600 rounded-t-lg"></div>
                             <div class="absolute ml-5 -mt-20">
-                                <div class="w-40 bg-gray-200 border border-b rounded-lg shadow-md h-36 border-primary">{{ $user->profileId }}</div>
-                                You are logged in!
-                                {{  $user['username'] }}
+                                <img src="{{ asset('img/'.$profile->avatar ) }}" class="w-40 bg-gray-200 border border-b rounded-lg shadow-md h-36 border-primary">
+                                <img src="" alt="">
                             </div>
                         </div>
 
@@ -41,34 +40,18 @@
                             ! ------------------------------------------------------------
                             !-->
                         <div class="flex flex-col p-5 pt-20 border rounded-b-lg bg-primary border-primary">
-                            <div class="w-40 h-5 mb-1 bg-gray-200 border border-gray-300">ftdhfthfthft</div>
-                            <div class="h-5 mb-1 bg-gray-200 border border-gray-300 w-96">fthftdhftdhfthft</div>
+                            <div class="w-40 h-5 mb-1 bg-gray-200 border border-gray-300">
+                                You are logged in!
+                                </div>
+                            <div class="h-5 mb-1 bg-gray-200 border border-gray-300 w-96">{{  $user['username'] }}</div>
                             <div class="mt-2 text-sm text-gray-200">
                                 <div class="flex flex-row items-center ml-auto space-x-2">
-                                    <div class="w-20 h-5 mb-1 bg-gray-200 border border-gray-300">fdhfdthtdhthftdhfth</div>
+                                    <div class="w-20 h-5 mb-1 bg-gray-200 border border-gray-300">{{  $profile['fullname' ]}}</div>
                                     <div class="w-1 h-1 bg-blue-200 rounded-full"></div>
                                     <div class="w-20 h-5 mb-1 bg-gray-200 border border-gray-300">fthfdthftd</div>
                                 </div>
                             </div>
 
-                            <div class="flex gap-8 pt-8">
-                                <div class="flex flex-col">
-                                    <div class="w-20 h-5 mb-1 bg-gray-200 border border-gray-300">tfhfthfdthft</div>
-                                    <div class="w-20 h-5 mb-1 bg-gray-200 border border-gray-300">fhfthft</div>
-                                </div>
-                                <div class="flex flex-col">
-                                    <div class="w-20 h-5 mb-1 bg-gray-200 border border-gray-300">fthfthft</div>
-                                    <div class="w-20 h-5 mb-1 bg-gray-200 border border-gray-300">fhfthf</div>
-                                </div>
-                                <div class="flex flex-col">
-                                    <div class="w-20 h-5 mb-1 bg-gray-200 border border-gray-300">fthfth</div>
-                                    <div class="w-20 h-5 mb-1 bg-gray-200 border border-gray-300">hfthft</div>
-                                </div>
-                                <div class="flex flex-col">
-                                    <div class="w-20 h-5 mb-1 bg-gray-200 border border-gray-300">fhfthft</div>
-                                    <div class="w-20 h-5 mb-1 bg-gray-200 border border-gray-300">ftchfthfthft</div>
-                                </div>
-                            </div>
                             <div class="py-5 break-all bbcode">
                                 <div class="h-5 mb-1 bg-gray-200 border border-gray-300 w-44">dfhdhdth</div>
                                 <div class="w-full h-5 h-40 mb-1 bg-gray-200 border border-gray-300">fthfthf</div>
