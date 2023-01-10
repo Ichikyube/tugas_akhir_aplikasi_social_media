@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('dateofbirth');
             $table->tinyInteger('gender');
             $table->string('avatar');
+            $table->text('bio');
             $table->timestamps();
         });
     }

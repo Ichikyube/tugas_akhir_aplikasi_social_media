@@ -29,7 +29,7 @@
                         <div class="w-full">
                             <div class="w-full h-48 bg-blue-600 rounded-t-lg"></div>
                             <div class="absolute ml-5 -mt-20">
-                                <img src="{{ asset('img/'.$profile->avatar ) }}" class="w-40 bg-gray-200 border border-b rounded-lg shadow-md h-36 border-primary">
+                                <img src="{{ asset('storage/img/'.$profile->avatar ) }}" class="w-40 bg-gray-200 border border-b rounded-lg shadow-md h-36 border-primary">
                                 <img src="" alt="">
                             </div>
                         </div>

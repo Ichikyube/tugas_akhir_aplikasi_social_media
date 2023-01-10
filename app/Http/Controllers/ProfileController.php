@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rules\File;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Profile;
@@ -54,25 +55,18 @@ class ProfileController extends Controller
     {
         $input = $request->all();
         $user = Auth::user();
-        // $validator = Validator::make ($input, [
-        //     'fullname'      => ['required', 'max:255', 'string', 'max:50' ],
-        //     'dateofbirth'   => ['required', 'date', 'date_format:Y-M-D', 'before:today'],
-        //     'gender'        => 'required',
-        // ], [
-        //     'required'      => ':harus diisi',
-        //     'fullname.required' => ':Excuse us to know more about you',
-        //     'dateofbirth.required'  => ':Excuse us to know more about you'
-        // ]);
-        // // // Retrieve the validated input...
-        // $validated = $validator->validated();
-        // dd($validator);
-        if($request->hasFile('img')) {
-            $file = $request->file('img');
-            $file->validate([
-                'image' => 'required|image|mimes:png,jpg,jpeg|max:2048'
+        if($request->hasFile('avatar')) {
+            $file = [$request->file('avatar')];
+            Validator::validate($file, [
+                'avatar' => [
+                    File::image()
+                    ->min(124)
+                    ->max(12 * 1024),
+                ],
             ]);
-            $imageName = date('YmdHis') . "." . $file->getClientOriginalName();
-            $request->image->storeAs('images', $imageName);// //Store in Storage Folder
+            $img = $file[0];
+            $imageName = date('YmdHis') . "." . $img->getClientOriginalName();
+            $request->file('avatar')->store('public/img', $imageName);// //Store in Storage Folder
         } else $imageName = "default.jpg";
 
         $profile = new Profile;
